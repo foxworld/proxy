@@ -19,6 +19,6 @@ public class OrderControllerV1Impl implements OrderControllerV1 {
 
     @Override
     public String noLog() {
-        return "v1 ok";
+        return "v1 no-log";
     }
 }
