@@ -21,6 +21,6 @@ public class OrderControllerV2 {
 
     @GetMapping("/v2/no-log")
     public String noLog() {
-        return "v2 ok";
+        return "v2 no-log";
     }
 }
