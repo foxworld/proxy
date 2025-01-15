@@ -48,4 +48,7 @@
 ## 7.빈후처리기(BeanPostProcessor)
 * 스프링이 빈 저장소에 등록할 목적으로 생성한 객체를 빈 저장소에 등록하기 직전에 조작하고 싶다면 빈 후처리기를 사용
 * BeanPostProcessor
-
+* postProcessBeforeInitialization: 객체 생성 이후에  `@PostConstruct` 전에 호출되는 포스트 프로세서
+* postProcessAfterInitialization:  객체 생성 이후에 `@PostConstruct` 같은 초기화가 발생한 다음에 호출되는 포스트 프로세서
+* `@PostConstruct`: 스프링 빈 생성 이후에 빈을 초기화 하는 역할
+ 

@@ -2,6 +2,7 @@ package hello.proxy;
 
 import hello.proxy.config.v3_proxyfactory.ProxyFactoryConfigV1;
 import hello.proxy.config.v3_proxyfactory.ProxyFactoryConfigV2;
+import hello.proxy.config.v4_postprocessor.postprocessor.BeanPostProcessorConfig;
 import hello.proxy.trace.logtrace.LogTrace;
 import hello.proxy.trace.logtrace.ThreadLocalLogTrace;
 import org.springframework.boot.SpringApplication;
@@ -14,7 +15,8 @@ import org.springframework.context.annotation.Import;
 //@Import(DynamicProxyBasicConfig.class) // 동적프로시를 이용하여 남기는 config
 //@Import(DynamicProxyFilterConfig.class) // 특정패턴만 로그를 남기는 Config
 //@Import(ProxyFactoryConfigV1.class) // ProxyFactory interface 적용하는 config
-@Import(ProxyFactoryConfigV2.class) // ProxyFactory 구체클레스 cglib 적용하는 config
+//@Import(ProxyFactoryConfigV2.class) // ProxyFactory 구체클레스 cglib 적용하는 config
+@Import(BeanPostProcessorConfig.class)
 @SpringBootApplication(scanBasePackages = "hello.proxy.app.v3") // ComponentScan 위치를 지정하여 필요한부분만 스캔
 public class ProxyApplication {
 
