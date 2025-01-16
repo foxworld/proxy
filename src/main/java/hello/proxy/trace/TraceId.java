@@ -5,11 +5,15 @@ import lombok.Getter;
 
 import java.util.UUID;
 
-@AllArgsConstructor
 @Getter
 public class TraceId {
     private String id;
     private int level;
+
+    public TraceId(String id, int level) {
+        this.id = id;
+        this.level = level;
+    }
 
     public TraceId() {
         this.id = createId();
