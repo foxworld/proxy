@@ -57,4 +57,21 @@
     implementation 'org.springframework.boot:spring-boot-starter-aop'
 ```
 * AnnotationAwareAspectJAutoProxyCreator : 빈 후처리기가 스프링 빈에 자동으로 등록
-* 
+
+## 9.@AspectAOP
+
+``'@Aspect'`` 애노테이션으로 매우 편리하게 포인트컷과 어드바이저로 구성되어 있는 어드바이저 생성기능을 지원한다.
+
+* `@Aspect` : 애노테이션 기반 프록시를 적용할 때 필요하다.
+* `@Around("execution(* hello.proxy.app..*(..))")`
+  * `@Around` 의 값에 포인트컷 표현식을 넣는다. 표현식은 AspectJ 표현식을 사용한다.
+  * `@Around` 의 메서드는 어드바이스( `Advice` )가 된다.
+* `ProceedingJoinPoint joinPoint` : 어드바이스에서 살펴본 `MethodInvocation invocation` 과 유사한 기능이다. 내부에 실제 호출 대상, 전달 인자, 그리고 어떤 객체와 어떤 메서드가 호출되었는지 정보가 포함되어 있다.
+* `joinPoint.proceed()` : 실제 호출 대상( `target` )을 호출한다.
+
+## 10.AOP 소개 - 핵심기능 및 부가 기능
+
+* **핵심 기능** : 해당 객체가 제공하는 고유의 기능이다. 예를 들어서 `OrderService` 의 핵심 기능은 주문 로직이
+다.
+* **부가 기능** : 핵심 기능을 보조하기 위해 제공되는 기능이다. 예를 들어서 로그 추적 로직, 트랜잭션 기능이 있다. 이러한 부가 기능은 단독으로 사용되지 않고, 핵심 기능과 함께 사용된다. 예를 들어서 로그 추적 기능은 어떤 핵심 기능이 호출되었는지 로그를 남기기 위해 사용한다. 그러니까 부가 기능은 이름 그대로 핵심 기능을 보조하기
+위해 존재한다. 
