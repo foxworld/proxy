@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import java.lang.reflect.Proxy;
 
 @Slf4j
-public class JdkDyamaicProxyTest {
+public class JdkDynamicProxyTest {
 
     @Test
     void dynamicA() {
